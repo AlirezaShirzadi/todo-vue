@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 
 const itemList = ref({
-  todo: [],
+  todo: [{ title: "test1" }, { title: "test2" }],
   inProgress: [],
   done: [],
 })
@@ -24,6 +24,10 @@ const doneLength = computed(() => {
       <div>Todo: {{ todoLength }}</div>
       <div>In Progress: {{ inProgressLength }}</div>
       <div>Done: {{ doneLength }}</div>
+    </div>
+    <div class="lengthWrapper">
+      <div>
+      <div v-for="item in itemList.todo">{{ item.title }}</div></div>
     </div>
   </main>
 </template>
